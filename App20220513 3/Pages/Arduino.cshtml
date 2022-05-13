@@ -1,0 +1,35 @@
+﻿@page
+@model App20220513_3.Pages.Arduino
+
+@{
+    Layout = null;
+}
+<link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css">
+<!DOCTYPE html>
+<html style="width: 100vw; height: 100vh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina de inicio</title>
+</head>
+<body class="bg-secondary bg-opacity-75">
+<div class="container d-flex flex-column align-items-center justify-content-center w-100 h-100">
+    <h4 class="text-center m-5">Control remoto</h4>
+    <button id="btnEncender" class="btn btn-primary m-3">Encender</button>
+    <button id="btnApagar" class="btn btn-danger">Apagar</button>
+</div>
+</body>
+<script>
+    const btnEncender = document.getElementById('btnEncender');
+    const btnApagar = document.getElementById('btnApagar');
+    
+    btnEncender.addEventListener('click', () => {
+       fetch('/api/Arduino/Encender') 
+    });
+    
+    btnApagar.addEventListener('click', () => {
+           fetch('/api/Arduino/Apagar') 
+    });
+</script>
+</html>
